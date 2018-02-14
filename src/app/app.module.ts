@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { MatSidenavModule, MatToolbarModule } from "@angular/material";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+import { DashboardModule } from "./dashboard/dashboard.module";
 
 
 @NgModule({
@@ -10,7 +16,14 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    CommonModule,
+    BrowserModule,
+    RouterModule,
+    NoopAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    FlexLayoutModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

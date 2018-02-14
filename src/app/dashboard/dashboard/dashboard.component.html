@@ -1,0 +1,58 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Title</mat-card-title>
+    <mat-card-subtitle>Subtitle</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>This is my content</p>
+    <div class="container">
+    <cdk-table [dataSource]="dataSource" fxLayout="column" >
+      <!-- User name Definition -->
+      <ng-container cdkColumnDef="username">
+        <cdk-header-cell *cdkHeaderCellDef class="header-cell" > User name </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="cell" > *{{row.value}}* </cdk-cell>
+      </ng-container>
+
+      <!-- Age Definition -->
+      <ng-container cdkColumnDef="age">
+        <cdk-header-cell *cdkHeaderCellDef class="header-cell" > Age </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="cell"  > {{row.unit}} </cdk-cell>
+      </ng-container>
+
+      <!-- Title Definition -->
+      <ng-container cdkColumnDef="title">
+        <cdk-header-cell *cdkHeaderCellDef class="header-cell"  > Title </cdk-header-cell>
+        <cdk-cell *cdkCellDef="let row" class="cell" > {{row.type}} </cdk-cell>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <cdk-header-row *cdkHeaderRowDef="['username', 'age', 'title']" class="header-row" ></cdk-header-row>
+      <cdk-row *cdkRowDef="let row; columns: ['username', 'age', 'title']" class="row"  ></cdk-row>
+    </cdk-table>
+    </div>
+  </mat-card-content>
+</mat-card>
+<h1>Outside Card</h1>
+<cdk-table [dataSource]="dataSource" fxLayout="column" >
+  <!-- User name Definition -->
+  <ng-container cdkColumnDef="username">
+    <cdk-header-cell *cdkHeaderCellDef class="header-cell" > User name </cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row" class="cell" > *{{row.value}}* </cdk-cell>
+  </ng-container>
+
+  <!-- Age Definition -->
+  <ng-container cdkColumnDef="age">
+    <cdk-header-cell *cdkHeaderCellDef class="header-cell" > Age </cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row" class="cell"  > {{row.unit}} </cdk-cell>
+  </ng-container>
+
+  <!-- Title Definition -->
+  <ng-container cdkColumnDef="title">
+    <cdk-header-cell *cdkHeaderCellDef class="header-cell"  > Title </cdk-header-cell>
+    <cdk-cell *cdkCellDef="let row" class="cell" > {{row.type}} </cdk-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <cdk-header-row *cdkHeaderRowDef="['username', 'age', 'title']" class="header-row" ></cdk-header-row>
+  <cdk-row *cdkRowDef="let row; columns: ['username', 'age', 'title']" class="row"  ></cdk-row>
+</cdk-table>
