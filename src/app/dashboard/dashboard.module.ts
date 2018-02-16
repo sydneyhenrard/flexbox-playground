@@ -4,12 +4,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatCardModule } from "@angular/material";
 import { CdkTableModule } from "@angular/cdk/table";
 import { MyDataSource } from "./my-data-source";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   imports: [
     CommonModule,
     MatCardModule,
-    CdkTableModule
+    CdkTableModule,
+    FlexLayoutModule
   ],
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
